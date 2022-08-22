@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | JING AN TZENG</title>
+    <link>https://robintzeng.github.io/project/</link>
+      <atom:link href="https://robintzeng.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 30 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://robintzeng.github.io/images/icon_hu33e8c61f27fd641c1e5b23db9d65383a_5197_512x512_fill_lanczos_center_2.png</url>
+      <title>Projects</title>
+      <link>https://robintzeng.github.io/project/</link>
+    </image>
+    
+    <item>
+      <title>Improvements on Object Detection (Faster R-CNN)</title>
+      <link>https://robintzeng.github.io/project/rcnn/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://robintzeng.github.io/project/rcnn/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;In this project, the main goal is to investigate the object detection model architecture to improve the mean Average Precision (mAP). In the past, researchers are dedicated to proposing new ideas in each part of the network architecture to enhance model performance. However, each method is a stand-alone little piece. It remains unclear if we can take advantage of these little pieces to push the model performance. Therefore, we aim to combine these refinements made in each architecture to investigate whether the model performance can be even better.  Our modifications are based on Faster R-CNN with Feature Pyramid Network (FPN) to improve the model performance, including backbone, Region Proposal Network, feature maps refinement and RoI head.&lt;/p&gt;
+&lt;p&gt;Our code repository is located 
+&lt;a href=&#34;https://github.com/robintzeng/mask-rcnn-Pytorch&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;performance&#34;&gt;Performance&lt;/h2&gt;
+&lt;p&gt;Evaluate the performance on the PASCAL 2007 dataset
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/FAST_RCNN_result.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/FAST_RCNN_result.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;br&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/FAST_RCNN_result1.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/FAST_RCNN_result1.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Video Inpainting Benchmark</title>
+      <link>https://robintzeng.github.io/project/inpainting/</link>
+      <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://robintzeng.github.io/project/inpainting/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;When evaluating video inpainting methods, people often use different video sources. Commonly-used datasets are video segmentation datasets like DAVIS 2017 and YouTube-VOS  because  they  provide  foreground  masks. However, they are not specifically designed for video inpainting: they don’t give labels to indicate whether the video is hard for video inpainting, and if so, why.&lt;/p&gt;
+&lt;p&gt;For this reason, we propose attributes that are likely to affect the video inpainting model performance — camera motion, foreground motion, background scene motion, and foreground displacement — and  label  them  on  DAVIS  2017. This can help us evaluate those videos’ difficulties for the video inpainting task. However, labeling a video objectively is a challenge for humans since everyone has their own criterion; therefore, we propose a set of automatic classifiers. We hope the new-annotated dataset will be a guide for researchers to improve their algorithms.&lt;/p&gt;
+&lt;h2 id=&#34;classifier-performance&#34;&gt;Classifier Performance&lt;/h2&gt;
+&lt;p&gt;In the new dataset, we divide the videos’ motion into binary labels. It will be either high motion video or low motion video and evaluate the performance on the DAVIS dataset.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Camera motion&lt;/strong&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/VP_camera_motion.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/VP_camera_motion.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In low camera motion video, most of the background textures are observed in both frames and that they are completely different on the right.
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-camera-motion-performance&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/VP_camera_motion_curve.png&#34; data-caption=&#34;Camera Motion Performance&#34;&gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/VP_camera_motion_curve.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Camera Motion Performance
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Foreground motion&lt;/strong&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/VP_foreground_motion.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/VP_foreground_motion.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+In a low foreground motion video, the foreground object’s appearance is consistent across the frames. However, in high foreground motion video, the object tends to change its posture very much.
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-foreground-motion-performance&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/VP_foreground_motion_curve.png&#34; data-caption=&#34;Foreground Motion Performance&#34;&gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/VP_foreground_motion_curve.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Foreground Motion Performance
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Background scene motion&lt;/strong&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/VP_scene_motion.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/VP_scene_motion.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+The high scenic motion video will obtain moving components like water in the background, and the low scenic motion video will obtain static backgrounds like rock and trees.
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-background-scene-motion-performance&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/VP_bg_scene_motion_score.png&#34; data-caption=&#34;Background Scene Motion Performance&#34;&gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/VP_bg_scene_motion_score.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Background Scene Motion Performance
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Foreground displacement&lt;/strong&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/VP_foreground_displacement.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/VP_foreground_displacement.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+The high foreground displacement videos can often reveal different parts of the occluded background over time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-foreground-displacement-performance&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/VP_fg_displacement_score.png&#34; data-caption=&#34;Foreground Displacement Performance&#34;&gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/VP_fg_displacement_score.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Foreground Displacement Performance
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Depth Completion</title>
+      <link>https://robintzeng.github.io/project/cv/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://robintzeng.github.io/project/cv/</guid>
+      <description>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-fig-1-two-pathway&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/model.png&#34; data-caption=&#34;Fig. 1 Two Pathway&#34;&gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/model.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Fig. 1 Two Pathway
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;We develop the learning architecture that can effectively complete the dense depth from a &lt;strong&gt;color image&lt;/strong&gt; and &lt;strong&gt;sparse LiDAR&lt;/strong&gt; data.&lt;/p&gt;
+&lt;p&gt;Our model consists of two pathways: the &lt;strong&gt;local pathway&lt;/strong&gt; and the &lt;strong&gt;global pathway&lt;/strong&gt; which is illustrated in Fig 1. The local pathway aims to extract high-resolution features, and it is made up of 2D blocks, which is illustrated in Fig. 2(b). The global pathway extracts low-resolution features, and it comprises our proposed U-Block, as shown in Fig. 2(a). The structure of the pathway is illustrated in Fig 3.&lt;/p&gt;
+&lt;p&gt;Also, we improve the performance of the local pathway by concatenating binary mask to the sparse LiDAR data, because the binary mask can help our model to indicate the valid values of sparse LiDAR data.&lt;/p&gt;
+&lt;p&gt;Finally, to combine the results of the local and global pathways, we apply the attention mechanism (confidence map) to integrate the predicted dense from two pathways.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/block.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/block.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/pathway_struct.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/pathway_struct.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/confidence.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/confidence.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/performance.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/performance.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Visual Inertia Navigation</title>
+      <link>https://robintzeng.github.io/project/mobile/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://robintzeng.github.io/project/mobile/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;This project aims to adopt an open-source visual
+inertial navigation framework with two modifications. First, an
+alternative visual descriptor and extractor, SuperPoint, is tested
+in place of ORB features. Secondly, an invariant error state is
+implemented in order to more effectively track the IMU pose
+uncertainty while maintaining the visual feature correction step
+in a ”dual track” system. Each of these changes is evaluated
+separately on three datasets obtained from the 
+&lt;a href=&#34;https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EuRoC MAV
+dataset&lt;/a&gt;. Our code repository is located 
+&lt;a href=&#34;https://github.com/robintzeng/EECS568_team_14_open_vins&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;performance&#34;&gt;Performance&lt;/h2&gt;
+&lt;p&gt;Evaluate the performance on the EuRoC  MAV dataset
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Traj.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Traj.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;br&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Table_RMSE.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Table_RMSE.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;br&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Error_med.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Error_med.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Error_diff.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Error_diff.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Table_Time.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Table_Time.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;video&#34;&gt;Video&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/RPiYuu_pLAU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Eurobot 2018</title>
+      <link>https://robintzeng.github.io/project/eurobot/</link>
+      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
+      <guid>https://robintzeng.github.io/project/eurobot/</guid>
+      <description>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-robots&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/robot.JPG&#34; data-caption=&#34;Robots&#34;&gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/robot.JPG&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Robots
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-map&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/map.png&#34; data-caption=&#34;Map&#34;&gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/map.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Map
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Created in 1998, Eurobot is an international robotics contest.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;For each team, we have to make two robots that can cooperate to finish the tasks on the given map such as throwing the ball into a bucket and stacking the color bricks in the given order.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;When the robots finish the task, they would get some points. The team with higher scores wins.&lt;/p&gt;
+&lt;p&gt;I was the software team leader in this contest. In our team, we took charge of sensing the world and making the decision for the robot. In addition, I made an indoor positioning system with UWB and Kalman filter which can locate the rival accurately.&lt;/p&gt;
+&lt;h2 id=&#34;video&#34;&gt;Video&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/Uo4OeNeYvSM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Exoskeleton</title>
+      <link>https://robintzeng.github.io/project/exo/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://robintzeng.github.io/project/exo/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;To deal with the shoulder rehabilitation problem, we made an exoskeleton suit.&lt;/p&gt;
+&lt;p&gt;In this project, there are two parts of the exoskeleton. The sensing part and the activation part, the sensing part would fetch the information about the rehabilitation exercise from the therapist.&lt;/p&gt;
+&lt;p&gt;And then, it will send that information to the activating part to practice the action that recorded.&lt;/p&gt;
+&lt;p&gt;Thus, the physical therapist can record his motion to the exoskeleton and let the patient do it many times.&lt;/p&gt;
+&lt;p&gt;Also, we made a GUI for the user to record and see whether their gesture is correct or not.
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/exoskeleton.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/exoskeleton.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/EXO_stand.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/EXO_stand.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/EXO_sit.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/EXO_sit.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

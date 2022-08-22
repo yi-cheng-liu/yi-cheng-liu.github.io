@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile Robotics | JING AN TZENG</title>
+    <link>https://robintzeng.github.io/tag/mobile-robotics/</link>
+      <atom:link href="https://robintzeng.github.io/tag/mobile-robotics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mobile Robotics</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 27 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://robintzeng.github.io/images/icon_hu33e8c61f27fd641c1e5b23db9d65383a_5197_512x512_fill_lanczos_center_2.png</url>
+      <title>Mobile Robotics</title>
+      <link>https://robintzeng.github.io/tag/mobile-robotics/</link>
+    </image>
+    
+    <item>
+      <title>Visual Inertia Navigation</title>
+      <link>https://robintzeng.github.io/project/mobile/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://robintzeng.github.io/project/mobile/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;This project aims to adapt an open source visual
+inertial navigation framework with two modifications. First, an
+alternative visual descriptor and extractor, SuperPoint, is tested
+in place of ORB features. Secondly, an invariant error state is
+implemented in order to more effectively track the IMU pose
+uncertainty while maintaining the visual feature correction step
+in a ”dual track” system. Each of these changes is evaluated
+separately on three datasets obtained from the 
+&lt;a href=&#34;https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EuRoC MAV
+dataset&lt;/a&gt;. Our code repository is located 
+&lt;a href=&#34;https://github.com/robintzeng/EECS568_team_14_open_vins&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;performance&#34;&gt;Performance&lt;/h2&gt;
+&lt;p&gt;Evaluate the performance on the EuRoC  MAV dataset
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Traj.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Traj.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;br&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Table_RMSE.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Table_RMSE.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;br&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Error_med.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Error_med.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Error_diff.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Error_diff.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/Table_Time.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/Table_Time.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;video&#34;&gt;Video&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/RPiYuu_pLAU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

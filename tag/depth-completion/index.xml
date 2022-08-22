@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Depth Completion | JING AN TZENG</title>
+    <link>https://robintzeng.github.io/tag/depth-completion/</link>
+      <atom:link href="https://robintzeng.github.io/tag/depth-completion/index.xml" rel="self" type="application/rss+xml" />
+    <description>Depth Completion</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 27 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://robintzeng.github.io/images/icon_hu33e8c61f27fd641c1e5b23db9d65383a_5197_512x512_fill_lanczos_center_2.png</url>
+      <title>Depth Completion</title>
+      <link>https://robintzeng.github.io/tag/depth-completion/</link>
+    </image>
+    
+    <item>
+      <title>Depth Completion</title>
+      <link>https://robintzeng.github.io/project/cv/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://robintzeng.github.io/project/cv/</guid>
+      <description>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-fig-1-two-pathway&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/model.png&#34; data-caption=&#34;Fig. 1 Two Pathway&#34;&gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/model.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Fig. 1 Two Pathway
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;We develop the learning architecture that can effectively complete the dense depth from a &lt;strong&gt;color image&lt;/strong&gt; and &lt;strong&gt;sparse LiDAR&lt;/strong&gt; data.&lt;/p&gt;
+&lt;p&gt;Our model consists of two pathways: the &lt;strong&gt;local pathway&lt;/strong&gt; and the &lt;strong&gt;global pathway&lt;/strong&gt; which is illustrated in Fig 1. The local pathway aims to extract high-resolution features, and it is made up of 2D blocks, which is illustrated in Fig. 2(b). The global pathway extracts low-resolution features, and it comprises our proposed U-Block, as shown in Fig. 2(a). The structure of the pathway is illustrated in Fig 3.&lt;/p&gt;
+&lt;p&gt;Also, we improve the performance of the local pathway by concatenating binary mask to the sparse LiDAR data, because the binary mask can help our model to indicate the valid values of sparse LiDAR data.&lt;/p&gt;
+&lt;p&gt;Finally, to combine the results of the local and global pathways, we apply the attention mechanism (confidence map) to integrate the predicted dense from two pathways.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/block.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/block.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/pathway_struct.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/pathway_struct.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/confidence.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/confidence.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/performance.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/performance.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

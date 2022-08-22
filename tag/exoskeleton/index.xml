@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exoskeleton | JING AN TZENG</title>
+    <link>https://robintzeng.github.io/tag/exoskeleton/</link>
+      <atom:link href="https://robintzeng.github.io/tag/exoskeleton/index.xml" rel="self" type="application/rss+xml" />
+    <description>Exoskeleton</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://robintzeng.github.io/images/icon_hu33e8c61f27fd641c1e5b23db9d65383a_5197_512x512_fill_lanczos_center_2.png</url>
+      <title>Exoskeleton</title>
+      <link>https://robintzeng.github.io/tag/exoskeleton/</link>
+    </image>
+    
+    <item>
+      <title>Exoskeleton</title>
+      <link>https://robintzeng.github.io/project/exo/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://robintzeng.github.io/project/exo/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;To deal with the shoulder rehabilitation problem, we made an exoskeleton suit.&lt;/p&gt;
+&lt;p&gt;In this project, there are two parts of the exoskeleton. The sensing part and the activation part, the sensing part would fetch the information about the rehabilitation exercise from the therapist.&lt;/p&gt;
+&lt;p&gt;And then, it will send that information to the activating part to practice the action that recorded.&lt;/p&gt;
+&lt;p&gt;Thus, the physical therapist can record his motion to the exoskeleton and let the patient do it many times.&lt;/p&gt;
+&lt;p&gt;Also, we made a GUI for the user to record and see whether their gesture is correct or not.
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/exoskeleton.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/exoskeleton.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/EXO_stand.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/EXO_stand.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://robintzeng.github.io/img/EXO_sit.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://robintzeng.github.io/img/EXO_sit.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
