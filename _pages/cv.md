@@ -13,6 +13,7 @@ redirect_from:
 Education
 ======
 * B.S. in **Vehicle Engineering**, National Taipei University of Technology, 2021
+* Exchange in **Department of Engineering**, Karlsruhe University of Applied Sciences, 2019
 * M.S. in **Electrical and Computer Engineering**, University of Michigan - Ann Arbor, 2024 (expected)
 
 
@@ -22,12 +23,6 @@ Work experience
   * Conducted mechanical and structural inspections and maintenance; examined, repaired and replaced auto parts
   * Diagnosed and repaired electrical, electronic and cooling systems
   * Offered emergency roadside assistance services
-
-* Jan 2022 - May 2022:
-  * 
-  * 
-  * 
-
 
 Skills
 ======
@@ -50,9 +45,3 @@ Skills
   * German (Intermediate)
     * Goethe Zertifikat A2
     * Goethe Zertifikat B1
-
-
-
-Honor
-======
-* 
