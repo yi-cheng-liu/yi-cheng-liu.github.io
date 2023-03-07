@@ -40,7 +40,7 @@ Skills
   * English (Fluent)
     * IELTS 7.0 ()
     * TOEFL 100
-    * GRE 321 (Verbal 151, Quantative 170)
+    * GRE 321 (Verbal: 151, Quantitative: 170, Analytical Writing: 3.0)
   * German (Intermediate)
     * Goethe Zertifikat A2
     * Goethe Zertifikat B1
