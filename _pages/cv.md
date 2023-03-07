@@ -12,13 +12,13 @@ redirect_from:
 
 Education
 ======
-* B.S. in Vehicle Engineering, National Taipei University of Technology, 2021
-* M.S. in Electrical and Computer Engineering, University of Michigan - Ann Arbor, 2024 (expected)
+* B.S. in **Vehicle Engineering**, National Taipei University of Technology, 2021
+* M.S. in **Electrical and Computer Engineering**, University of Michigan - Ann Arbor, 2024 (expected)
 
 
 Work experience
 ======
-* Summer 2019: Assistant Automotive Technician
+* Summer 2019: **Assistant Automotive Technician**
   * Conducted mechanical and structural inspections and maintenance; examined, repaired and replaced auto parts
   * Diagnosed and repaired electrical, electronic and cooling systems
   * Offered emergency roadside assistance services
@@ -31,12 +31,17 @@ Work experience
 
 Skills
 ======
-* Programming skills
+* **Programming skills**
   * C/C++
   * python
   * MATLAB/ Simulink/ Stateflow
   * HTML/ CSS/ javascript
-* Language skills
+* **Application tools**
+  * ROS
+  * Git, Git LFS
+  * SLAM tools (Autoware, GTSAM)
+  * CAN-bus tools (Kvaser, BUSMASTER)
+* **Language skills**
   * Manderian (Native)
   * English (Fluent)
     * IELTS 7.0 ()
@@ -45,11 +50,7 @@ Skills
   * German (Intermediate)
     * Goethe Zertifikat A2
     * Goethe Zertifikat B1
-* Application tools
-  * ROS
-  * Git, Git LFS
-  * SLAM tools (Autoware, GTSAM)
-  * CAN-bus tools (Kvaser, BUSMASTER)
+
 
 
 Service and leadership
