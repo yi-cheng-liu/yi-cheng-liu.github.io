@@ -10,13 +10,13 @@ redirect_from:
 {% include base_path %}
 
 Education
-
+======
 * B.S. in Vehicle Engineering, National Taipei University of Technology, 2021
 * M.S. in Electrical and Computer Engineering, University of Michigan - Ann Arbor, 2024 (expected)
 
-========================
-Work experience
 
+Work experience
+======
 * Summer 2019: Assistant Automotive Technician
   * Conducted mechanical and structural inspections and maintenance; examined, repaired and replaced auto parts
   * Diagnosed and repaired electrical, electronic and cooling systems
@@ -27,9 +27,9 @@ Work experience
   * 
   * 
 
-========================
-Skills
 
+Skills
+======
 * Programming skills
   * C/C++
   * python
@@ -50,7 +50,7 @@ Skills
   * SLAM tools (Autoware, GTSAM)
   * CAN-bus tools (Kvaser, BUSMASTER)
 
-========================
-Service and leadership
 
+Service and leadership
+======
 * Currently signed in to 43 different slack teams
