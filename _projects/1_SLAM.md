@@ -4,12 +4,13 @@ excerpt: "GTSAM"
 collection: projects
 ---
 
-
+The code implements two algorithms, batch and incremental, for 2D trajectory optimization using gtsam library. The input data is obtained from a g2o file containing the 2D poses and edges between them. The batch solution uses Gauss-Newton method to optimize the graph, while the incremental solution uses iSAM2 algorithm to optimize the graph incrementally in every timestep. A prior factor model is added to the graph to improve optimization performance. The optimized trajectories are then plotted and saved as figures. The code also includes a function to convert the optimized poses from gtsam Pose2 objects to numpy arrays for easier plotting. Overall, this code provides a basic implementation for 2D trajectory optimization using gtsam library.
 
 ## 2-Dimentional Graph SLAM
+
 <details>
 <summary>Batch Solution</summary>
-Input : file name 
+Input : file name
 Output: result
 
 The goal is to optimize the trajectory with the batch method using the input g2o file “`input_INTEL_g2o.g2o`”. There are mainly five steps, which are reading the data, add a prior factor model, build a optimizer with the Gauss-Newton method, optimize the graph and initial to a `gtsam.Pose2` structure, and plot the x, y position.
@@ -42,6 +43,7 @@ After the iterations, we would return the result with the Pose2 structure. The `
 </details>
 
 ## 3-Dimentinoal Graph SLAM
+
 <details>
 <summary>Batch Solution</summary>
 
@@ -58,10 +60,11 @@ We want to solve the non-linear least square problem with the Gauss-Newton metho
 </details>
 
 <details>
+
 <summary>Incremental Solition</summary>
 
-Input: poses (`Nx8`) `[i x y theta]` 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; edges (`Nx30`) `[i j x y theta info(x, y, theta)]` 
+Input: poses (`Nx8`) `[i x y theta]`
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; edges (`Nx30`) `[i j x y theta info(x, y, theta)]`
 Output: result
 
 The goal is to optimize the trajectory with the incremental method using the input g2o file “`parking-garage.g2o`”. There are mainly seven steps, which are reading the data, initialize ISAM2, add a prior factor model, calculate the information matrix for the moisemodel, update the isam with the current graph and initial estimate, calculate the estimate every timestep and convert to a `gtsam.Pose3` structure, and plot the x, y, z position.
