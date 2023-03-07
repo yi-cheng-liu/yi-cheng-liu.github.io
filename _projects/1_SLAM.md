@@ -1,6 +1,6 @@
 ---
 title: "SLAM_with_GTSAM"
-excerpt: "GTSAM"
+excerpt: "Solve the trajectory in 2D and 3D with GTSAM"
 collection: projects
 ---
 
