@@ -44,8 +44,8 @@ Skills
 * **Language skills**
   * Manderian (Native)
   * English (Fluent)
-    * IELTS 7.0 ()
-    * TOEFL 100
+    * IELTS 7.0 (R:7.5, L:7.0, S:7.0, W:6.5)
+    * TOEFL 100 (R:28, L:29, S:20, W:23)
     * GRE 321 (Verbal: 151, Quantitative: 170, Analytical Writing: 3.0)
   * German (Intermediate)
     * Goethe Zertifikat A2
@@ -53,6 +53,6 @@ Skills
 
 
 
-Service and leadership
+Leadership
 ======
 * Currently signed in to 43 different slack teams
