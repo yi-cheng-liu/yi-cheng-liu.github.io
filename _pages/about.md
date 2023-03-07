@@ -9,6 +9,6 @@ redirect_from:
 ---
 
 
-A data-driven personal website
-
+About me 
 ======
+Hi! This is my personal page which 
