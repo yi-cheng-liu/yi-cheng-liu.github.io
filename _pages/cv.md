@@ -9,6 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
+
 Education
 ======
 * B.S. in Vehicle Engineering, National Taipei University of Technology, 2021
