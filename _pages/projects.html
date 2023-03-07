@@ -10,9 +10,12 @@ author_profile: true
 
 <h2>Table of contents:</h2>
 
-{% for post in site.projects %}
-  {% include archive-single.html %}
-{% endfor %}
+{% capture markdown %}
+    {% for post in site.projects %}
+        {% include archive-single.html %}
+    {% endfor %}
+{% endcapture %}
+
 
 <!-- {% assign content = markdown | markdownify %}
 {% include toc.html html=content %} -->
