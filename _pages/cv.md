@@ -11,48 +11,47 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.S. in Vehicle Engineering, National Taipei University of Technology, 2021
+* M.S. in Electrical and Computer Engineering, University of Michigan - Ann Arbor, 2024(expected)
+
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Summer 2019: Assistant Automotive Technician
+  * Conducted mechanical and structural inspections and maintenance; examined, repaired and replaced auto parts
+  * Diagnosed and repaired electrical, electronic and cooling systems
+  * Offered emergency roadside assistance services
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Jan 2022 - May 2022: 
+  * 
+  * 
+  * 
+
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Programming skills
+  * C/C++
+  * python
+  * MATLAB/ Simulink/ Stateflow
+  * HTML/ CSS/ javascript
+* Language skills
+  * Manderian (Native)
+  * English (Fluent)
+    * IELTS 7.0 ()
+    * TOEFL 100 
+    * GRE 321 (Verbal 151, Quantative 170)
+  * German (Intermediate)
+    * Goethe Zertifikat A2
+    * Goethe Zertifikat B1
+* Application tools
+  * ROS
+  * Git
+  * Autoware
+  * CAN-bus tools ()
 
-Publications
-======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+
+
   
 Service and leadership
 ======
