@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 * B.S. in Vehicle Engineering, National Taipei University of Technology, 2021
-* M.S. in Electrical and Computer Engineering, University of Michigan - Ann Arbor, 2024(expected)
+* M.S. in Electrical and Computer Engineering, University of Michigan - Ann Arbor, 2024 (expected)
 
 
 Work experience
@@ -46,9 +46,9 @@ Skills
     * Goethe Zertifikat B1
 * Application tools
   * ROS
-  * Git
-  * Autoware
-  * CAN-bus tools ()
+  * Git, Git LFS
+  * SLAM tools (Autoware, GTSAM)
+  * CAN-bus tools (Kvaser, BUSMASTER)
 
 
 
