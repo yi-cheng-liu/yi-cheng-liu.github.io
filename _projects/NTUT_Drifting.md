@@ -11,6 +11,8 @@ collection: projects
 * Designed LQR controller for steering angle and proportional control for rear drive force
 * Held course angle error under 0.9 degrees and visualized the high side-slip maneuver process in Simulink
 
+## Final Report
+<iframe src="https://drive.google.com/file/d/1bVhZXYxDoGGf3J8VWpzKh8qUZeTXuqPU/preview" width="560" height="315"></iframe>
 
 ## Final results
 
