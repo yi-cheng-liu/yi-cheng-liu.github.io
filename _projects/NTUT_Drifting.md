@@ -12,6 +12,8 @@ collection: projects
 * Held course angle error under 0.9 degrees and visualized the high side-slip maneuver process in Simulink
 
 ## Final Report
+<iframe src="https://drive.google.com/file/d/1bVhZXYxDoGGf3J8VWpzKh8qUZeTXuqPU/preview" width="560" height="315"></iframe>
+
 <iframe src="https://drive.google.com/file/d/1bVhZXYxDoGGf3J8VWpzKh8qUZeTXuqPU/preview" width="640" height="480"></iframe>
 
 ## Final results
