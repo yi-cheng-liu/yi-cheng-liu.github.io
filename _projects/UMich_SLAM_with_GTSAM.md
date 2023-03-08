@@ -10,20 +10,20 @@ The code implements two algorithms, batch and incremental, for 2D trajectory opt
 
 ### Batch Solution
 
-    Input : file name
-    Output: result
+Input : file name <br>
+Output: result
 
-    The goal is to optimize the trajectory with the batch method using the input g2o file “`input_INTEL_g2o.g2o`”. There are mainly five steps, which are reading the data, add a prior factor model, build a optimizer with the Gauss-Newton method, optimize the graph and initial to a `gtsam.Pose2` structure, and plot the x, y position.
+The goal is to optimize the trajectory with the batch method using the input g2o file “`input_INTEL_g2o.g2o`”. There are mainly five steps, which are reading the data, add a prior factor model, build a optimizer with the Gauss-Newton method, optimize the graph and initial to a `gtsam.Pose2` structure, and plot the x, y position.
 
-    The predefined `gtsam.readG2o(file, is3D)` function phrases a G2o file and stores the measurements into a `gtsam.NonlinearFactorGraph` structure and the initial estimate into a `gtsam.Values` structure. The function set a flag ‘is3D’ to false since it’s a 2D graph.
+The predefined `gtsam.readG2o(file, is3D)` function phrases a G2o file and stores the measurements into a `gtsam.NonlinearFactorGraph` structure and the initial estimate into a `gtsam.Values` structure. The function set a flag ‘is3D’ to false since it’s a 2D graph.
 
-    The following step is to add a prior factor to a existing graph. We have to define a noiseModel first, build a factorPose2 with the noiseModel and add the factorPose2 to the graph. Noisemodel can be build with `Diagnoal`, `Gaussian`, `Isotropic`, `Constrained`, and `Unit`, and I choose the `gtsam.noiseModel.Diagonal`.Variances() method with specifing the variances of the 33 matrix using `np.array([1e-6, 1e-6, 1e-4])`. The prior factor have to be created subsequently with `gtsam.PriorFactorPose2(0, gtsam.Pose2(), priorModel)` to be added to the graph. Then we can add the `priorFactorPose2` to the graph with measurements.
+The following step is to add a prior factor to a existing graph. We have to define a noiseModel first, build a factorPose2 with the noiseModel and add the factorPose2 to the graph. Noisemodel can be build with `Diagnoal`, `Gaussian`, `Isotropic`, `Constrained`, and `Unit`, and I choose the `gtsam.noiseModel.Diagonal`.Variances() method with specifing the variances of the 33 matrix using `np.array([1e-6, 1e-6, 1e-4])`. The prior factor have to be created subsequently with `gtsam.PriorFactorPose2(0, gtsam.Pose2(), priorModel)` to be added to the graph. Then we can add the `priorFactorPose2` to the graph with measurements.
 
-    We want to solve the non-linear least square problem with the Gauss-Newton method. Thus, we give the `gtsam.GaussNewtonOptimizer(graph, initial, params)` function with the measurement graph with priorFactor, the initial estimate, and configuration parameters with `gtsam.GaussNewtonParams()`. After optimizing with the Gauss-Newton method, the `gtsam.optimize()` method is used for building the graph, initial to a `Pose2` structure. With the `Pose2` structure, I define a `pose2_to_array(result)` function which change the `Pose2` structure to an np.array and extract the x, y values for plotting the initial and result.
+We want to solve the non-linear least square problem with the Gauss-Newton method. Thus, we give the `gtsam.GaussNewtonOptimizer(graph, initial, params)` function with the measurement graph with priorFactor, the initial estimate, and configuration parameters with `gtsam.GaussNewtonParams()`. After optimizing with the Gauss-Newton method, the `gtsam.optimize()` method is used for building the graph, initial to a `Pose2` structure. With the `Pose2` structure, I define a `pose2_to_array(result)` function which change the `Pose2` structure to an np.array and extract the x, y values for plotting the initial and result.
 
 ### Incremental Solution
 
-Input: poses (Nx4)  `[i x y theta]`
+Input: poses (Nx4)  `[i x y theta]` <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; edges (Nx11) `[i j x y theta info(x, y, theta)]`
 Output: result
 
@@ -47,7 +47,7 @@ After the iterations, we would return the result with the Pose2 structure. The `
 
 ### Batch Solution
 
-Input: file name
+Input: file name <br>
 Output: result
 
 The goal is to optimize the trajectory with the batch method using the input g2o file “`parking-garage.g2o`”. There are mainly five steps, which are reading the data, add a prior factor model, build a optimizer with the Gauss-Newton method, optimize the graph and initial to a `gtsam.Pose3` structure, and plot the x, y, z position. The steps are the same as the 3D batch solutions, but we would have a dataset with 3-dimentional measurements, which instead of `Pose3` structure, we use Pose3 structure.
@@ -60,7 +60,7 @@ We want to solve the non-linear least square problem with the Gauss-Newton metho
 
 ### Incremental Solition
 
-Input: poses (`Nx8`) `[i x y theta]`
+Input: poses (`Nx8`) `[i x y theta]` <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; edges (`Nx30`) `[i j x y theta info(x, y, theta)]`
 Output: result
 
