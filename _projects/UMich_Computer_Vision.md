@@ -6,6 +6,12 @@ collection: projects
 
 ## Assignment 1 - Data Visualization, Image Dithering
 
+| original                 | Quantize Naive            | Quantize Floyd            | Quantize Floyd with gamma correction
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![cosmos original](/images/projects/UMich/Computer_Vision/hw1_cosmos.jpg_orig.png) |  ![cosmos naive](/images/projects/UMich/Computer_Vision/hw1_cosmos.jpg_quantizeNaive.png) | ![cosmos floyd](/images/projects/UMich/Computer_Vision/hw1_cosmos.jpg_quantizeFloyd.png) | ![cosmos floyd with gamma correction](/images/projects/UMich/Computer_Vision/hw1_cosmos.jpg_quantizeFloydGamma.png)
+![david original](/images/projects/UMich/Computer_Vision/hw1_david.jpg_orig.png) |  ![david naive](/images/projects/UMich/Computer_Vision/hw1_david.jpg_quantizeNaive.png) | ![david floyd](/images/projects/UMich/Computer_Vision/hw1_david.jpg_quantizeFloyd.png) | ![david floyd with gamma correction](/images/projects/UMich/Computer_Vision/hw1_david.jpg_quantizeFloydGamma.png)
+![vladimirka original](/images/projects/UMich/Computer_Vision/hw1_vladimirka.jpg_orig.png) |  ![vladimirka naive](/images/projects/UMich/Computer_Vision/hw1_vladimirka.jpg_quantizeNaive.png) | ![vladimirka floyd](/images/projects/UMich/Computer_Vision/hw1_vladimirka.jpg_quantizeFloyd.png) | ![vladimirka floyd with gamma correction](/images/projects/UMich/Computer_Vision/hw1_vladimirka.jpg_quantizeFloydGamma.png)
+
 ## Assignment 2 - Image Filtering, Feature Extraction, Blob Detection
 
 ## Assignment 3 - Synthetic Views, Image Warping, Augmented Reality
@@ -28,7 +34,7 @@ collection: projects
 ![image warping huron img1](/images/projects/UMich/Computer_Vision/hw3_t6_huron_img1.jpg) |  ![image warping huron img2](/images/projects/UMich/Computer_Vision/hw3_t6_huron_img2.jpg) | ![image warping huron combined](/images/projects/UMich/Computer_Vision/hw3_t6_huron_combined.jpg)
 
 
-### Augmented Reality
+### Augmented Reality - low cost version
 
 | scene                    | template                  | seals                    | Augmented reality
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
