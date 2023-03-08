@@ -16,6 +16,8 @@ collection: projects
 
 <iframe src="https://drive.google.com/file/d/1bVhZXYxDoGGf3J8VWpzKh8qUZeTXuqPU/preview" width="640" height="480"></iframe>
 
+<iframe src="https://drive.google.com/file/d/1bVhZXYxDoGGf3J8VWpzKh8qUZeTXuqPU/preview" width="640" height="480" frameborder="0"></iframe>
+
 ## Final results
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wwEMqDIFKgo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
