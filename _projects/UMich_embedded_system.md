@@ -1,6 +1,6 @@
 ---
-title: "Error-State Extended Kalman Filter for Vehicle Localization"
-excerpt: "use EKF to estimate the location"
+title: "Embedded system"
+excerpt: "embedded system"
 collection: projects
 ---
 

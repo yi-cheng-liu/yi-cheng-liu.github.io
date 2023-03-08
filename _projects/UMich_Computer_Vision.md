@@ -14,6 +14,7 @@ collection: projects
 
 ## Assignment 2 - Image Filtering, Feature Extraction, Blob Detection
 
+
 ## Assignment 3 - Synthetic Views, Image Warping, Augmented Reality
 
 ### Synthetic Views
