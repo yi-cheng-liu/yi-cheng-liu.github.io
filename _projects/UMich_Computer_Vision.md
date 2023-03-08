@@ -1,6 +1,6 @@
 ---
 title: "Computer Vision"
-excerpt: "EECS 442 Computer vision course work"
+excerpt: "EECS 442 Computer vision course work <br/><img src='/images/projects/UMich/Computer_Vision/hw3_t6_huron_combined.jpg'>"
 collection: projects
 ---
 

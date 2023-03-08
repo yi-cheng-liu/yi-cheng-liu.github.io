@@ -42,6 +42,10 @@ Starting from now, we steps will be repeated until the data in finish calculatin
 After the iterations, we would return the result with the Pose2 structure. The `pose2_to_array(result)` function would change the `Pose2` structure to an np.array and extract the x, y values for plotting the initial and result.
 </details>
 
+| 2D - Batch Solution      |  2D - Incremental Solution                     |
+:-------------------------:|:-------------------------:
+![Batch Solution](/images/projects/UMich/Mobile_robot/2D_batch_trajectory_optimization.png)     |  ![Incremental Solution](/images/projects/UMich/Mobile_robot/2D_incremental_trajectory_optimization.png)
+
 ## 3-Dimentinoal Graph SLAM
 
 <details>
@@ -79,3 +83,7 @@ Starting from now, we steps will be repeated until the data in finish calculatin
 
 After the iterations, we would return the result with the `Pose3` structure. The `pose3_to_array(result)` function would change the `Pose3` structure to an np.array and extract the x, y, z values for plotting the initial and result.
 </details>
+
+| 3D - Batch Solution      |  3D - Incremental Solution                     |
+:-------------------------:|:-------------------------:
+![Batch Solution](/images/projects/UMich/Mobile_robot/3D_batch_trajectory_optimization.png)     |  ![Incremental Solution](/images/projects/UMich/Mobile_robot/3D_incremental_trajectory_optimization.png)
