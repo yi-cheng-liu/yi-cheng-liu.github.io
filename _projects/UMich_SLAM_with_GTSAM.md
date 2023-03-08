@@ -2,7 +2,7 @@
 title: "SLAM_with_GTSAM"
 excerpt: "Solve the trajectory in 2D and 3D with GTSAM 
          <br/>
-         <img src='/images/projects/UMich/Mobile_robot/2d_3d_solution.jpeg' alt='2d 3d solution'>"
+         <img src='/images/projects/UMich/Mobile_robot/2d_3d_solution.jpg' alt='2d 3d solution'>"
 collection: projects
 ---
 
