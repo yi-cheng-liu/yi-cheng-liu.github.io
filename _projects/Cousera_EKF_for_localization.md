@@ -1,6 +1,6 @@
 ---
 title: "Error-State Extended Kalman Filter for Vehicle Localization"
-excerpt: "use EKF to estimate the location"
+excerpt: "use EKF to estimate the location <br/><img src='/images/projects/Cousera/Self_driving/estimation_trajectory.png'>"
 collection: projects
 ---
 
