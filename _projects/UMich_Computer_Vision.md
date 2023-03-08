@@ -11,10 +11,13 @@ collection: projects
 ## Assignment 3 - Synthetic Views, Image Warping, Augmented Reality
 
 ### Synthetic Views
-|    :----:                                                                                                        |          ---: |
-| <img src="/images/projects/UMich/Computer_Vision/hw3_t5_palmer_frontoparallel.jpg" alt="synthetic views palmer"> | Here's this   |
-| Text        | And more      |
-<img src="/images/projects/UMich/Computer_Vision/hw3_t5_threebody_frontoparallel.jpg" alt="synthetic views threebody">
+
+| Before             |  After      |
+:-------------------------:|:-------------------------:
+![original palmer](images/projects/UMich/Computer_Vision/hw3_t5_palmer_original.jpg)      |  ![synthetic views palmer](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_frontoparallel.jpg)
+![original threebody](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_original.jpg)  |  ![synthetic views threebody](images/projects/UMich/Computer_Vision/hw3_t5_threebody_frontoparallel.jpg)
+
+
 
 ### Image Warping
 
