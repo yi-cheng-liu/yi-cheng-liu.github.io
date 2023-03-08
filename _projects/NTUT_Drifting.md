@@ -1,6 +1,6 @@
 ---
 title: "Drifting Stabilization Along Circular Trajectories"
-excerpt: "visualize the drifting trajectory <br/><img src='/images/projects/NTUT/drifting_architecture.png'>"
+excerpt: "visualize the drifting trajectory ![drifting architecture]('/images/projects/NTUT/drifting_architecture.png') ![drifting result]('/images/projects/NTUT/drifting.gif')"
 collection: projects
 ---
 
@@ -8,7 +8,7 @@ collection: projects
 
 Drifting control is the ability to maintain control of a drifting vehicle while executing high-speed, controlled sideslips around corners. The purpose of building a drifting controller can help prevent accidents and allow the vehicle to maintain high speeds and make precise maneuvers.
 
-## What we achieved
+## What was achieved
 
 * Stabilized the side-slip angle to match different desired curvatures and realize drifting motion
 * Achieved error dynamics and nonlinear model inversion to calculate desired operating points, steering angle, yaw rate, rear drive force and longitudinal velocity
