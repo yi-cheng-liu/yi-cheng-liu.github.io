@@ -12,16 +12,22 @@ collection: projects
 
 ### Synthetic Views
 
-| Before             |  After      |
+| Before                   |  After                    |
 :-------------------------:|:-------------------------:
-![original palmer](images/projects/UMich/Computer_Vision/hw3_t5_palmer_original.jpg)      |  ![synthetic views palmer](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_frontoparallel.jpg)
-![original threebody](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_original.jpg)  |  ![synthetic views threebody](images/projects/UMich/Computer_Vision/hw3_t5_threebody_frontoparallel.jpg)
+![original palmer](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_original.jpg)     |  ![synthetic views palmer](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_frontoparallel.jpg)
+![original threebody](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_original.jpg)  |  ![synthetic views threebody](/images/projects/UMich/Computer_Vision/hw3_t5_threebody_frontoparallel.jpg)
 
 
 
 ### Image Warping
 
-<img src="/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_combined.jpg" alt="image warping eynsham combined"><img src="/images/projects/UMich/Computer_Vision/hw3_t6_florida_combined.jpg" alt="image warping florida combined">
-<img src="/images/projects/UMich/Computer_Vision/hw3_t6_huron_1_2_combined.jpg" alt="image warping huron combined"><img src="/images/projects/UMich/Computer_Vision/hw3_t6_mertoncourtyard_combined.jpg" alt="image warping mertoncourtyard combined">
+| Before img 1             | Before img 2              |  After
+:-------------------------:|:-------------------------:|:-------------------------:
+![image warping eynsham img1](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img1.jpg) |  ![image warping eynsham img2](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img2.jpg) | ![image warping eynsham combined](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_combined.jpg)
+
+![image warping florida img1](/images/projects/UMich/Computer_Vision/hw3_t6_florida_img1.jpg) |  ![image warping florida img2](/images/projects/UMich/Computer_Vision/hw3_t6_florida_img2.jpg) | ![image warping florida combined](/images/projects/UMich/Computer_Vision/hw3_t6_florida_combined.jpg)
+
+![image warping huron img1](/images/projects/UMich/Computer_Vision/hw3_t6_huron_img1.jpg) |  ![image warping huron img2](/images/projects/UMich/Computer_Vision/hw3_t6_huron_img2.jpg) | ![image warping huron combined](/images/projects/UMich/Computer_Vision/hw3_t6_huron_combined.jpg)
+
 
 ### Augmented Reality
