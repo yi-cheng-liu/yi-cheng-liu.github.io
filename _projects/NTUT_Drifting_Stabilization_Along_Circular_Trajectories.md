@@ -2,8 +2,7 @@
 title: "Drifting Stabilization Along Circular Trajectories"
 excerpt: "visualize the drifting trajectory 
          <br/>
-         <img src='/images/projects/NTUT/drifting_architecture.png' alt='drifting architecture'>
-         <img src='/images/projects/NTUT/drifting.gif' alt='drifting gif'>
+         <img src='/images/projects/NTUT/drifting_architecture_gif.gif' alt='drifting architecture gif'>
 "
 collection: projects
 ---

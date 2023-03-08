@@ -1,6 +1,6 @@
 ---
-title: "Programming for Scientiss and Engineer"
-excerpt: "Programming for Scientiss and Engineer"
+title: "Programming for Scientists and Engineer"
+excerpt: "Programming for Scientists and Engineer"
 collection: projects
 ---
 
