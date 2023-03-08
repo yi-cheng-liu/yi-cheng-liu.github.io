@@ -24,10 +24,13 @@ collection: projects
 | Before img 1             | Before img 2              |  After
 :-------------------------:|:-------------------------:|:-------------------------:
 ![image warping eynsham img1](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img1.jpg) |  ![image warping eynsham img2](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img2.jpg) | ![image warping eynsham combined](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_combined.jpg)
-
 ![image warping florida img1](/images/projects/UMich/Computer_Vision/hw3_t6_florida_img1.jpg) |  ![image warping florida img2](/images/projects/UMich/Computer_Vision/hw3_t6_florida_img2.jpg) | ![image warping florida combined](/images/projects/UMich/Computer_Vision/hw3_t6_florida_combined.jpg)
-
 ![image warping huron img1](/images/projects/UMich/Computer_Vision/hw3_t6_huron_img1.jpg) |  ![image warping huron img2](/images/projects/UMich/Computer_Vision/hw3_t6_huron_img2.jpg) | ![image warping huron combined](/images/projects/UMich/Computer_Vision/hw3_t6_huron_combined.jpg)
 
 
 ### Augmented Reality
+| Before img 1             | Before img 2              |  After
+:-------------------------:|:-------------------------:|:-------------------------:
+![image warping eynsham img1](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img1.jpg) |  ![image warping eynsham img2](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img2.jpg) | ![image warping eynsham combined](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_combined.jpg)
+![image warping eynsham img1](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img1.jpg) |  ![image warping eynsham img2](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img2.jpg) | ![image warping eynsham combined](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_combined.jpg)
+![image warping eynsham img1](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img1.jpg) |  ![image warping eynsham img2](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_img2.jpg) | ![image warping eynsham combined](/images/projects/UMich/Computer_Vision/hw3_t6_eynsham_combined.jpg)
