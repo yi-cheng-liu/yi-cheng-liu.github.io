@@ -15,7 +15,7 @@ collection: projects
 | Before                   |  After                    |
 :-------------------------:|:-------------------------:
 ![original palmer](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_original.jpg)     |  ![synthetic views palmer](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_frontoparallel.jpg)
-![original threebody](/images/projects/UMich/Computer_Vision/hw3_t5_palmer_original.jpg)  |  ![synthetic views threebody](/images/projects/UMich/Computer_Vision/hw3_t5_threebody_frontoparallel.jpg)
+![original threebody](/images/projects/UMich/Computer_Vision/hw3_t5_threebody_original.jpg)  |  ![synthetic views threebody](/images/projects/UMich/Computer_Vision/hw3_t5_threebody_frontoparallel.jpg)
 
 
 
