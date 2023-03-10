@@ -6,10 +6,9 @@ excerpt: "Solve the trajectory in 2D and 3D with GTSAM
 collection: projects
 ---
 
-:computer: [Github repo](https://github.com/yi-cheng-liu/Mobile_robot/tree/main/SLAM_with_GTSAM)
-
 The code implements two algorithms, batch and incremental, for 2D trajectory optimization using gtsam library. The input data is obtained from a g2o file containing the 2D poses and edges between them. The batch solution uses Gauss-Newton method to optimize the graph, while the incremental solution uses iSAM2 algorithm to optimize the graph incrementally in every timestep. A prior factor model is added to the graph to improve optimization performance. The optimized trajectories are then plotted and saved as figures. The code also includes a function to convert the optimized poses from gtsam Pose2 objects to numpy arrays for easier plotting. Overall, this code provides a basic implementation for 2D trajectory optimization using gtsam library.
 
+:computer: [Github repo](https://github.com/yi-cheng-liu/Mobile_robot/tree/main/SLAM_with_GTSAM)
 ## 2-Dimentional Graph SLAM
 
 ### Batch Solution
