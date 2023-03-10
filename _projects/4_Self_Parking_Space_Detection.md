@@ -1,7 +1,8 @@
 ---
 title: "Parking Space Detection"
 excerpt: " Applied adaptive threshold identification on gaussian-blured image with self-annotated rectangle
-          <br/><img src='/images/projects/self/detecting_result.gif'>"
+          <br/>
+          <img src='/images/projects/self/detecting_result.gif' alt='drifting architecture gif'>"
 collection: projects
 ---
 
@@ -13,4 +14,4 @@ The goal is to determine which parking spaces are empty and which ones are occup
 
 <img src='/images/projects/self/detecting_result.gif'>
 
-:computer: [Github repo:](https://github.com/yi-cheng-liu/park_space_detection)
+:computer: [Github repo](https://github.com/yi-cheng-liu/park_space_detection)
