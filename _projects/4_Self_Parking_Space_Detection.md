@@ -12,6 +12,7 @@ The goal is to determine which parking spaces are empty and which ones are occup
 
 ## Result
 
+
 <img src='/images/projects/self/detecting_result.gif'>
 
 :computer: [Github repo](https://github.com/yi-cheng-liu/park_space_detection)
