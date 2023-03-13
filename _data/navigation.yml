@@ -9,8 +9,8 @@ main:
   - title: "Work Experience"
     url: /work_experience/    
 
-  - title: "About me"
-    url: /about_me/   
+  # - title: "About me"
+  #   url: /about_me/   
 
   # - title: "Publications"
   #   url: /publications/
