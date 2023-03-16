@@ -228,6 +228,105 @@ uint32_t read_ADC0_single(uint16_t inputChannel)  {
 
 ### 4. Pulse Width Modulation (PWM)
 
+| SC3 Register          |  ADC block diagram
+:-------------------------:|:-------------------------:
+![CnV Register](/images/projects/UMich/Embedded_System/CnV_register.png)     |  ![High Pulse Widdth](/images/projects/UMich/Embedded_System/high_pulse_width.png)
+
+We will change the PWM duty cycle by changing the value of Cth by setting the **VAL bitfield** in the SCn register. However, C_thres could change during a counting cycle. S32K144 uses double buffering to assure PWM updates happen predictably. 
+
+Double buffered means we don’t directly update the **VAL bitfield** of the CnV register that specifies the duty cycle of the PWM signal. Instead we update the write buffer for the CnV register.
+
+```c
+static FTM_Type* FTM_MODULE[4] = FTM_BASE_PTRS;
+
+/******************************************************************************
+ * Function:    initPWMPCRs
+ * Description: Initialize the pins for each respective output PWM
+ ******************************************************************************/
+void initPWMPCRs()
+{
+    /* Initialize motor output PCR */
+    MOTOR_PORT->PCR[MOTOR_PCR] |= PORT_PCR_MUX(MOTOR_MUX);
+
+    /* Initialize filter output PCR */
+    FILTER_PORT->PCR[FILTER_PCR] |= PORT_PCR_MUX(FILTER_MUX);
+}
+
+/******************************************************************************
+ * Function:    initPWM
+ * Description: Initializes PWM - 45.5.7: Edge-Aligned PWM (EPWM) Mode
+ ******************************************************************************/
+void initPWM(int submodule, int channel, int frequency, float dutyCycle)
+{
+    /* 45.4.3.9 - Feature Mode Selection (MODE) */
+    FTM_MODULE[submodule]->MODE |= FTM_MODE_WPDIS_MASK;  /* Write protect to registers disabled (default) */
+
+    /* 45.4.3.2 - Status and Control (SC) */
+    FTM_MODULE[submodule]->SC = 0x00000000; /* Clear the status and control register */
+    FTM_MODULE[submodule]->SC |= FTM_SC_CLKS(0b11); /* Select external clock */
+
+    FTM_MODULE[submodule]->COMBINE = 0x00000000; /* FTM mode settings used: DECAPENx, MCOMBINEx, COMBINEx=0  */
+
+    /* Enable the respective channel */
+    FTM_MODULE[submodule]->SC |= ((0b1 << FTM_SC_PWMEN0_SHIFT) << channel);
+
+    /* Channel Control see S45.4.3.5 and Table 45-5 (S45.5.4) */
+    FTM_MODULE[submodule]->CONTROLS[channel].CnSC = 0; /* Clear the register*/
+    FTM_MODULE[submodule]->CONTROLS[channel].CnSC |= FTM_CnSC_MSB(0b1); /* MSB : Edge Align PWM */
+    FTM_MODULE[submodule]->CONTROLS[channel].CnSC |= FTM_CnSC_MSA(0b1); /* MSA : Edge Align PWM */ // not sure about the number
+    FTM_MODULE[submodule]->CONTROLS[channel].CnSC |= FTM_CnSC_ELSB(0b1); /* ELSB : High-true pulses */
+    FTM_MODULE[submodule]->CONTROLS[channel].CnSC |= FTM_CnSC_ELSA(0b0); /* ELSA : High-true pulses */
+
+    /* 45.5.7 - Edge-Aligned PWM (EPWM) */
+    FTM_MODULE[submodule]->CNTIN = 0;    /* Always start counter from 0 */
+    //  FTM_MODULE[submodule]-> MOD = cmax;  /* counter rolls over at MOD  */
+
+    FTM_MODULE[submodule]->CONF |= FTM_CONF_BDMMODE(0b11); /* Optional: enable in debug mode */
+
+    /* Set the PWM */
+    setPWM(submodule, channel, frequency, dutyCycle);
+}
+
+/******************************************************************************
+ * Function:    setPWM
+ * Description: Sets the output PWM for a given channel in FTM_MODULE
+ ******************************************************************************/
+void setPWM(int submodule, int channel, int frequency, float dutyCycle)
+{
+    uint16_t cthres;
+    uint16_t cmax;
+
+    cmax = ((1.0/frequency)* PWM_CLOCK_FREQ)- 1;
+    cthres = dutyCycle * (cmax + 1);
+
+    FTM_MODULE[submodule]->MOD = cmax; /* Set the PWM frequency */
+    // changing the value of Cth by setting the val bitfield in the SCn register
+    FTM_MODULE[submodule]->CONTROLS[channel].CnV = cthres;  /* Set the PWM duty cycle */
+}
+
+/******************************************************************************
+ * Function:    outputTorque
+ * Description: Outputs the torque to the haptic wheel in N-mm
+ ******************************************************************************/
+void outputTorque(float torque)
+{
+    // Calculate duty cycle
+    float dutyCycle = (torque/3162.5) + 0.5;
+
+    // Apply DC_UPPER_LIMIT, DC_LOWER_LIMIT
+    if(dutyCycle < DC_LOWER_LIMIT){
+        dutyCycle = DC_LOWER_LIMIT;
+    }
+    if (dutyCycle > DC_UPPER_LIMIT){
+        dutyCycle = DC_UPPER_LIMIT;
+    }
+
+    // Adjust the motor PWM
+    setPWM(MOTOR_SUBMODULE, MOTOR_CHANNEL, MOTOR_FREQUENCY, dutyCycle);
+}
+
+```
+
 ### 5. Interrupts and Frequency Analysis
 
 ### 6. Virtual Worlds with Dynamics
