@@ -232,11 +232,12 @@ uint32_t read_ADC0_single(uint16_t inputChannel)  {
 :-------------------------:|:-------------------------:
 ![CnV Register](/images/projects/UMich/Embedded_System/CnV_register.png)     |  ![High Pulse Widdth](/images/projects/UMich/Embedded_System/high_pulse_width.png)
 
-We will change the PWM duty cycle by changing the value of Cth by setting the **VAL bitfield** in the SCn register. However, C_thres could change during a counting cycle. S32K144 uses double buffering to assure PWM updates happen predictably. 
+We will change the PWM duty cycle by changing the value of Cth by setting the **VAL bitfield** in the SCn register. However, C_thres could change during a counting cycle. S32K144 uses double buffering to assure PWM updates happen predictably.
 
 Double buffered means we don’t directly update the **VAL bitfield** of the CnV register that specifies the duty cycle of the PWM signal. Instead we update the write buffer for the CnV register.
 
 ```c
+/* PWM.c */
 static FTM_Type* FTM_MODULE[4] = FTM_BASE_PTRS;
 
 /******************************************************************************
@@ -329,9 +330,308 @@ void outputTorque(float torque)
 
 ### 5. Interrupts and Frequency Analysis
 
+```c
+/* LPIT.c */
+void enableLPIT(){
+    /* 29.6.5 PCC LPIT Register  */
+    PCC->PCCn[PCC_LPIT_INDEX] &= ~PCC_PCCn_CGC_MASK;  /* Disable PCC LPIT clock to change PCS */
+    PCC->PCCn[PCC_LPIT_INDEX] = PCC_PCCn_PCS(0b110);   /* Clock source:  SPLL2_DIV2_CLK */
+    PCC->PCCn[PCC_LPIT_INDEX] |= PCC_PCCn_CGC_MASK;   /* Enable clk to LPIT0 regs */
+
+    /* 46.4.1.4.2 Module Control Register  */
+    LPIT0->MCR = LPIT_MCR_M_CEN(0b1);     /* enable module clk (allows writing other LPIT0 regs)*/
+}
+
+
+void initLPIT(const uint8_t channel, const uint32_t frequency, const isr_t handler, const uint32_t priority) {
+    /* 46.4.1.9.3 Timer Value Register   */
+    LPIT0->TMR[channel].TVAL = ((1.0/frequency)* LPIT_CLK_FREQ)- 1;  /* channel timer start value */
+    
+    /* 46.4.1.6.2 Module Interrupt Enable Register */
+    LPIT0->MIER = (0b1 << channel);    /* Timer Interrupt Enabled for Channel */
+    
+    /* 46.4.1.9.3 Timer Control Register */  
+    LPIT0->TMR[channel].TCTRL = 0; /* T_EN : Timer channel is disabled to set registers*/
+    //  LPIT0->TMR[channel].TCTRL |= LPIT_TMR_TCTRL_MODE(0b00);  /* MODE :  32 periodic counter mode */
+    //  LPIT0->TMR[channel].TCTRL |= LPIT_TMR_TCTRL_TSOT(0b0);  /* TSOT : Timer decrements immediately based on restart */
+    //  LPIT0->TMR[channel].TCTRL |= LPIT_TMR_TCTRL_TSOI(0b0);  /* TSOI :  Timer does not stop after timeout */
+    //  LPIT0->TMR[channel].TCTRL |= LPIT_TMR_TCTRL_TROT(0b0);  /* TROT : ignore external trigger */
+    
+    /* 46.4.1.7.3 Set Timer Enable Register   */                                                 
+    LPIT0->SETTEN = (0b1 << channel);    /*SET_T_EN_n :  enable timer for channel */
+
+    /* defined in interrupt_manager.c */
+    INT_SYS_InstallHandler(LPIT_IRQn[channel], handler, (isr_t*) 0);
+    INT_SYS_SetPriority(LPIT_IRQn[channel], priority);
+    INT_SYS_EnableIRQ(LPIT_IRQn[channel]);
+}
+
+
+void clearFlagLPIT(const uint8_t channel){
+    /* 46.4.1.5.3 Module Status Register  */
+    LPIT0->MSR = (0b1 << channel);   /* clear TIFn */
+}
+```
+
+```c
+/* lab5.c */
+#define LPIT0_CHANNEL  0
+
+double sineTable[10]; // Ten samples/period
+int sineIndex = 0;
+const float PI = 3.14159;
+
+uint32_t input = 0;
+int frequency, channel;
+uint8_t dip1, dip2, dip3;
+
+/* Interrupt A - Read Duty Cycle from Signal Generator */
+void IsrA(void){
+  uint32_t iAnalog;
+    float dutyCycle;
+    int freq;   //PWM frequency
+
+    uint8_t dipswitch1;
+    uint8_t dipswitch2;
+    float m,b;
+
+    /* Turn on LED */
+    writeGPIO(3, 0, 1);
+
+    /* Read sine value */
+    iAnalog = read_ADC0_single(0); // read AN0 analog input
+
+    /* Calculate PWM duty cycle */
+    dipswitch2 = readGPIO(4,7);
+    if(dipswitch2 == 1){
+      m = 0.8;
+      b = 0.1;
+    }
+    else{
+      m = 0.2;
+      b = 0.4;
+    }
+    dutyCycle = b + ((float)iAnalog / 5000) * m ; //y = m*(x/n) + b
+
+    /* Set PWM frequency based on dipswitch */
+    dipswitch1 = readGPIO(4, 6);
+    freq = (dipswitch1 == 1) ? 60000 : 20000;
+  //  frequency = 20000;
+    /* Set PWM duty cycle and frequency */
+    setPWM(MOTOR_SUBMODULE, MOTOR_CHANNEL, freq, dutyCycle);
+
+    /* Turn off LED */
+    writeGPIO(3, 0, 0);
+
+    /* Clear interrupt flag */
+    clearFlagLPIT(LPIT0_CHANNEL); //check: const type casting
+}
+
+/* Calculate Duty Cycle from sin() */
+void IsrB(void){
+    static int i = 0;
+    float theta, duty_cycle;
+
+    /* Turn on LED */
+    writeGPIO(LED_BASE[0], LED[0], 1);
+
+    /* Calculate and set PWM duty cycle */
+    theta = 2*PI * ((float)i/10);
+    i = (i+1) % 10;
+    duty_cycle = 0.5 + 0.4*sin (theta);
+    frequency = 60000;
+
+    setPWM(MOTOR_SUBMODULE, MOTOR_CHANNEL, frequency, duty_cycle);
+
+    /* Turn off LED */
+    writeGPIO(LED_BASE[0], LED[0], 0);
+
+    /* Clear interrupt flag */
+    clearFlagLPIT(LPIT0_CHANNEL); // clear channel 0
+}
+
+/* Calculate Duty Cycle Table Look-up */
+void IsrC(void){
+    /* Turn on LED */
+    writeGPIO(LED_BASE[0], LED[0], 1);
+
+    /* Calculate and set PWM duty cycle */
+    setPWM(MOTOR_SUBMODULE, MOTOR_CHANNEL, frequency, sineTable[sineIndex]);
+    sineIndex = (sineIndex+1) % 10;
+
+    /* Turn off LED */
+    writeGPIO(LED_BASE[0], LED[0], 0);
+
+    /* Clear interrupt flag */
+    clearFlagLPIT(0); // clear channel 0
+}
+
+int main(){
+    int index;
+    float theta;
+    initEECS461();
+    enableLPIT();
+    init_ADC0_single();
+
+    /* Initialize PWMs  */
+    initPWMPCRs();
+    initPWM(MOTOR_SUBMODULE, MOTOR_CHANNEL, MOTOR_FREQUENCY, FILTER_DUTY_CYCLE);    // motor
+    initPWM(FILTER_SUBMODULE, FILTER_CHANNEL, FILTER_FREQUENCY, FILTER_DUTY_CYCLE); // filter
+
+    /* Initialize GPIO  */
+    for(index = 0; index < 16; index++){
+        initGPDI(DIP_BASE[index], DIP[index]);
+        initGPDO(LED_BASE[index], LED[index]);
+    }
+
+    /* put the duty cycle in the sinTable */
+    for(index = 0; index < 10; index++){
+        theta = 2*PI *(index/10); ;
+        sineTable[index] = 0.5 + 0.4*sin (theta);
+    }
+
+    /* Initialize LPIT  */
+    initLPIT(LPIT0_CHANNEL, 1000, &IsrB, 0xC);
+
+    while(1){
+    }
+    return 0;
+};
+```
+
 ### 6. Virtual Worlds with Dynamics
 
+```c
+/* worlds.c */
+//====================LAB 4================================
+/***************************************************************************
+ * Virtual Wall
+ ***************************************************************************/
+float virtualWall(float angle)
+{
+  float torque = 0;
+  float k_wall = 500.0; // N-mm/degree
+  if(angle < 0){
+    torque = -k_wall * angle;
+  }
+  return torque;
+}
+
+/***************************************************************************
+ * Virtual Spring 
+ ***************************************************************************/
+float virtualSpring(float angle)
+{ 
+  float k_spring = 10; // N-mm/degree
+  return -k_spring * angle;
+}
+
+//====================LAB 6================================
+/***************************************************************************
+ * Virtual Spring Damper
+***************************************************************************/
+float virtualSpringDamper(float angle, float velocity)
+{
+  float k_spring = 10;
+  float b_damper = 0.4; // 0.64
+  return (-k_spring * angle) + (-b_damper * velocity);
+}
+
+/***************************************************************************
+ * Virtual Wall Damper
+***************************************************************************/
+float virtualWallDamper(float angle, float velocity)
+{
+  float torque = 0;
+  float k_spring = 500;
+  float b_damper = (k_spring * TIMESTEP) / 0.2;
+  if(angle < 0){
+    torque = (-k_spring * angle) + (-b_damper * velocity);
+  }
+  return torque;
+}
+
+/***************************************************************************
+ * Virtual Spring Mass
+***************************************************************************/
+float virtualSpringMass(float angle)
+{
+    float torque, k, m, x1, x2;
+    k = 17.7778;
+    m = 0.45;
+    static float x1_prev = 0;
+    static float x2_prev = 0;
+
+    // descrete time matrix form
+    x1 = x1_prev + (TIMESTEP * x2_prev);
+    x2 = ((-(k*TIMESTEP)/m) * x1_prev) + (x2_prev) + (((k*TIMESTEP)/m) * angle);
+    // x2 = x2_prev + (((k*TIMESTEP)/m) * (angle - x1_prev));
+
+    torque = k * (x1 - angle);
+    x1_prev = x1;
+    x2_prev = x2;
+
+    return torque;
+}
+
+/***************************************************************************
+ * Virtual Spring Mass Damper
+***************************************************************************/
+float virtualSpringMassDamper(float angle, float velocity) 
+{
+    float torque, b, x1, x2;
+    //  float K = 17.7778;
+    //  float M = 0.45;
+    float J = M;
+
+    static float x1_prev = 0;
+    static float x2_prev = 0;
+
+    b = K * TIMESTEP;
+
+    x1 = x1_prev + (TIMESTEP * x2_prev);
+    x2 = (-((K*TIMESTEP)/M) * x1_prev) + ((1.0 - (b*TIMESTEP)/M) * x2_prev) + (((K*TIMESTEP)/M) * angle) + (((b*TIMESTEP)/M) * velocity);
+    
+    torque = K * (x1 - angle) + b * (x2 - velocity);
+    x1_prev = x1;
+    x2_prev = x2;
+
+    return torque;
+}
+
+/***************************************************************************
+ * Virtual Knob
+***************************************************************************/ 
+float virtualKnob(float angle, float velocity) 
+{     
+    //There are many ways this can be implemented    
+    float b, k, torque, angle_to_move;
+    const int SCALE = 45;
+    float angle_in_scale = 0;
+
+    k = 30;
+    b = 0.5;
+
+    // find the right direction and angle to move
+    angle_in_scale = angle - SCALE * (int)(angle/SCALE);
+    // make the angle 0-20
+    if(angle < 0){
+        angle_in_scale += SCALE;
+    }
+    // find the right direction
+    angle_to_move = SCALE/2 - angle_in_scale;
+    torque = k * angle_to_move - b * velocity; 
+    return torque;
+}
+
+
+```
+
 ### 7. Control Area Network (CAN)
+
+```c
+
+```
 
 ### 8. Autocode Genegration
 
