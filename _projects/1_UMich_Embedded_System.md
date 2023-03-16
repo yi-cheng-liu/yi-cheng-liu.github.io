@@ -32,7 +32,7 @@ num ^= 1 << 3; // num = 0
 #define PORT_PCR_MUX(x)    (((uint32_t)(((uint32_t)(x))<<PORT_PCR_MUX_SHIFT))&PORT_PCR_MUX_MASK)
 ```
 
-### 1 DIP switches, LEDs
+### 1. DIP switches, LEDs
 
 ```c
 void section1(){
@@ -108,10 +108,11 @@ void section2(){
 }
 ```
 
-### 2 Quadrature Decoding with the FlexTimer
+### 2. Quadrature Decoding with the FlexTimer
 
 FTM have many registers, and each are 32 bits in width.  
 Every bitfield have its own function, whether its enable bits or setting values.
+
 | QDCTRL Register          |  FTM block diagram
 :-------------------------:|:-------------------------:
 ![Quadrature Decoder Control And Status (QDCTRL) Register](/images/projects/UMich/Embedded_System/QDCTRL_register.png)     |  ![FTM block diagram](/images/projects/UMich/Embedded_System/FTM_block_diagram.png)
@@ -164,9 +165,9 @@ float updateAngle(){
 
 ```
 
-### 3 Analog-to-Digital Conversion (ADC)
+### 3. Analog-to-Digital Conversion (ADC)
 
-| QDCTRL Register          |  ADC block diagram
+| SC3 Register          |  ADC block diagram
 :-------------------------:|:-------------------------:
 ![Status and Control Register 3 (SC3) Register](/images/projects/UMich/Embedded_System/SC3_register.png)     |  ![ADC block diagram](/images/projects/UMich/Embedded_System/ADC_block_diagram.png)
 
@@ -225,12 +226,14 @@ uint32_t read_ADC0_single(uint16_t inputChannel)  {
 }
 ```
 
-### 4 Pulse Width Modulation (PWM)
+### 4. Pulse Width Modulation (PWM)
 
-### 5 Interrupts and Frequency Analysis
+### 5. Interrupts and Frequency Analysis
 
-### 6 Virtual Worlds with Dynamics
+### 6. Virtual Worlds with Dynamics
 
-### 7 Control Area Network (CAN)
+### 7. Control Area Network (CAN)
+
+### 8. Autocode Genegration
 
 ## Final Project
