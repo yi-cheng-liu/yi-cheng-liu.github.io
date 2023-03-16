@@ -1,6 +1,6 @@
 ---
 title: "Embedded System"
-excerpt: "Embedded System"
+excerpt: "Embedded System course work"
 collection: projects
 ---
 
@@ -636,3 +636,13 @@ float virtualKnob(float angle, float velocity)
 ### 8. Autocode Genegration
 
 ## Final Project
+
+
+linkedin
+https://www.linkedin.com/in/yi-cheng-liu/
+
+Github
+https://github.com/yi-cheng-liu
+
+personal webpage
+https://yi-cheng-liu.github.io/
