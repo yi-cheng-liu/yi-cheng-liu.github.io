@@ -112,7 +112,9 @@ void section2(){
 
 FTM have many registers, and each are 32 bits in width.  
 Every bitfield have its own function, whether its enable bits or setting values.
-![Quadrature Decoder Control And Status (QDCTRL) Register](/images/projects/UMich/Embedded_System/quadrature_decoder_control_and_status_register.png)
+| QDCTRL Register          |  FTM block diagram
+:-------------------------:|:-------------------------:
+![Quadrature Decoder Control And Status (QDCTRL) Register](/images/projects/UMich/Embedded_System/QDCTRL_register.png)     |  ![FTM block diagram](/images/projects/UMich/Embedded_System/FTM_block_diagram.png)
 
 ```c
 /* qd.c */
@@ -162,9 +164,66 @@ float updateAngle(){
 
 ```
 
-![FTM block diagram](/images/projects/UMich/Embedded_System/FTM_block_diagram.png)
-
 ### 3 Analog-to-Digital Conversion (ADC)
+
+| QDCTRL Register          |  ADC block diagram
+:-------------------------:|:-------------------------:
+![Status and Control Register 3 (SC3) Register](/images/projects/UMich/Embedded_System/SC3_register.png)     |  ![ADC block diagram](/images/projects/UMich/Embedded_System/ADC_block_diagram.png)
+
+```c
+void init_ADC0_single(void)  {
+    /* Table 27-9 Peripheral module clocking */
+    /* 29.6.19 PCC ADC0 Register (PCC_ADC0) */
+    PCC->PCCn[PCC_ADC0_INDEX] |= PCC_PCCn_CGC(0b0);    /* Disable clock to change PCS */
+    PCC->PCCn[PCC_ADC0_INDEX] |= PCC_PCCn_PCS(0b001);  /* Select clock option 1 */
+    PCC->PCCn[PCC_ADC0_INDEX] |= PCC_PCCn_CGC(0b1);    /* Enable clock */
+
+    /*42.4.2 - ADC Status and Control Register 1 (SC1AA - SC1Z)*/
+    ADC0->SC1[0] |= ADC_SC1_ADCH(0b11111);  /* Disable Module */
+    ADC0->SC1[0] |= ADC_SC1_AIEN(0b0);      /* Disable interrupts */
+    
+    /*42.4.3 - ADC Configuration Register 1: CFG1 */
+    ADC0->CFG1 |= ADC_CFG1_ADICLK(0b00);    /* Alternate clock 1 */
+    ADC0->CFG1 |= ADC_CFG1_MODE(0b01);      /* 12-bit conversion (there are 8-bit, 10-bit) */
+    ADC0->CFG1 |= ADC_CFG1_ADIV(0b00);      /* Prescaler=1 */
+    
+    /*42.4.4 - ADC Configuration Register 2: CFG2 */
+    ADC0->CFG2 |= ADC_CFG2_SMPLTS(0b1100);  /* set sample time to 13 ADC clks */
+    
+    /*42.4.7 - Status and Control Register 2: SC2 */
+    ADC0->SC2 |= ADC_SC2_ADTRG(0b0);        /* Software trigger, a conversion is initiated following a write to SC1A */
+    ADC0->SC2 |= ADC_SC2_REFSEL(0b00);      /* use voltage reference pins VREFH & VREEFL */
+                                    
+    /*42.4.8 - Status and Control Register 3: SC3 */
+    ADC0->SC3 |= ADC_SC3_CAL(0b0);         /* Do not start calibration sequence */
+    ADC0->SC3 |= ADC_SC3_ADCO(0b0);        /* One conversion performed (single mode) */
+    ADC0->SC3 |= ADC_SC3_AVGE(0b0);        /* HW average function disabled */
+}
+
+
+uint8_t ADC0_complete(void)  {
+    /* 42.4.2.4 - COCO flag */
+    return (((ADC0->SC1[0]) & ADC_SC1_COCO_MASK) >> ADC_SC1_COCO_SHIFT);  /*return COCO flag*/
+}
+
+
+uint32_t read_ADC0_single(uint16_t inputChannel)  {
+    uint16_t adc_result=0;
+    
+    /* inform students of the mask and functions in header for ADCH */
+    ADC0->SC1[0] &= ~(ADC_SC1_ADCH_MASK);          /* Clear prior ADCH bits */
+    ADC0->SC1[0] |= ADC_SC1_ADCH(inputChannel);    /* Initiate Conversion */
+
+    while(ADC0_complete() == 0); // wait for completion
+    
+    /* 42.4.31.2 - Data Result Register*/
+    adc_result = ADC0->R[0];      /* For Software trigger mode, R[0] is used */
+    
+    /* Convert result to mv for 0-5V range */
+    /* Hint: can this be done without floating point math for speed? */
+    return  (uint32_t)(adc_result * 5000 / 4095);
+}
+```
 
 ### 4 Pulse Width Modulation (PWM)
 
